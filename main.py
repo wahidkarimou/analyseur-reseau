@@ -17,9 +17,9 @@ print("Structure du réseau :")
 graph.display()
 
 # II. Création des paquets
-p1 = Packet("A", "B", 10)
-p2 = Packet("A", "C", 20)
-p3 = Packet("B", "C", 5)
+p1 = Packet(1, "A", "B", 10)
+p2 = Packet(2, "A", "C", 20)
+p3 = Packet(3, "B", "C", 5)
 
 # III. File d'attente
 queue = QueueManager()
