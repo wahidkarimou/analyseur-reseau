@@ -1,13 +1,20 @@
+import time
+
 class Simulator:
     def __init__(self, graph, queue_manager):
         self.graph = graph
         self.queue_manager = queue_manager
 
     def run(self):
-        print("Simulation du trafic réseau...\n")
+        print("\n🚀 Simulation en cours...\n")
 
         while not self.queue_manager.is_empty():
-            packet = self.queue_manager.process_packet()
-            print(f"Traitement du paquet : {packet}")
+            self.queue_manager.process_packet()
+            time.sleep(1)
 
-        print("\nSimulation terminée.")
+        print("\n✅ Simulation terminée.")
+
+        stats = self.queue_manager.stats()
+        print("\n📊 Statistiques :")
+        print(f"Paquets restants : {stats['restants']}")
+        print(f"Paquets perdus : {stats['perdus']}")

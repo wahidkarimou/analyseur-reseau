@@ -21,11 +21,20 @@ p1 = Packet(1, "A", "B", 10)
 p2 = Packet(2, "A", "C", 20)
 p3 = Packet(3, "B", "C", 5)
 
-# III. File d'attente
-queue = QueueManager()
-queue.add_packet(p1)
-queue.add_packet(p2)
-queue.add_packet(p3)
+# III. File d'attente (avec capacité limitée)
+queue = QueueManager(capacity=2)
+
+# Création des paquets (liste)
+packets = [
+    Packet(1, "A", "B", 10),
+    Packet(2, "A", "C", 20),
+    Packet(3, "B", "C", 5),
+    Packet(4, "C", "A", 15),
+]
+
+# Ajout dans la file
+for p in packets:
+    queue.add_packet(p)
 
 # IV. Simulation
 simulator = Simulator(graph, queue)
