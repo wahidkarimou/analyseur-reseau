@@ -55,9 +55,9 @@ class App(tk.Tk):
 
         self._build_ui()
 
-    # ══════════════════════════════════════════════════════════════════════════
+
     # Construction UI
-    # ══════════════════════════════════════════════════════════════════════════
+    
     def _build_ui(self):
         # Header
         header = tk.Frame(self, bg=BG_CARD, height=50)
