@@ -1,6 +1,5 @@
 """
-Bloc 6 — Interface Graphique Tkinter (version simplifiée)
-Analyseur de Trafic Réseau Simulé
+Bloc 6 — Interface Graphique Tkinter
 """
 
 import tkinter as tk
@@ -114,7 +113,7 @@ class App(tk.Tk):
         # Boutons
         btns = [
             ("Envoyer paquet",        self._add_packet,         "#3fb950"),
-            ("▶ Lancer simulation",   self._run_simulation,     "#3fb950"),
+            ("▶ Lancer simulation",   self._run_simulation,     "#a855f7"),
             ("Goulots",               self._show_bottlenecks,   "#d29922"),
             ("Plus court chemin",     self._show_shortest_path, "#3a7bd5"),
             ("Réinitialiser",         self._reset,              "#f85149"),
