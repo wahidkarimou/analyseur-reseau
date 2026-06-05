@@ -128,7 +128,7 @@ class App(tk.Tk):
             ("▶ Lancer simulation",   self._run_simulation,     "#a855f7"),
             ("Goulots",               self._show_bottlenecks,   "#d29922"),
             ("Plus court chemin",     self._show_shortest_path, "#3a7bd5"),
-            ("SAUVEGARDER",        self._sauvegarder,        "#00d2ff"),
+            ("SAUVEGARDER",        self._sauvegarder,        "#016501"),
             ("CHARGER",            self._charger,            "#00d2ff"),
             ("Réinitialiser",         self._reset,              "#f85149"),
         ]
