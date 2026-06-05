@@ -1,6 +1,4 @@
-"""
-Bloc 6 — Interface Graphique Tkinter
-"""
+from utils.storage import sauvegarder, charger
 
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
@@ -34,6 +32,20 @@ class App(tk.Tk):
         self._active        = None
 
         self._build_ui()
+    def _sauvegarder(self):
+        if not self.graph.nodes:
+                self._log("Réseau vide — rien à sauvegarder.", "WARN")
+                return
+        sauvegarder(self.graph)
+        self._log("Réseau sauvegardé dans reseau.json", "OK")
+
+    def _charger(self):
+        ok = charger(self.graph, self.nx_graph)
+        if ok:
+            self._log("Réseau chargé depuis reseau.json", "OK")
+            self._draw_graph()
+        else:
+            self._log("Aucun fichier reseau.json trouvé.", "ERR")
 
     # ── Construction UI ───────────────────────────────────────────────────────
     def _build_ui(self):
@@ -116,6 +128,8 @@ class App(tk.Tk):
             ("▶ Lancer simulation",   self._run_simulation,     "#a855f7"),
             ("Goulots",               self._show_bottlenecks,   "#d29922"),
             ("Plus court chemin",     self._show_shortest_path, "#3a7bd5"),
+            ("SAUVEGARDER",        self._sauvegarder,        "#00d2ff"),
+            ("CHARGER",            self._charger,            "#00d2ff"),
             ("Réinitialiser",         self._reset,              "#f85149"),
         ]
         for i, (txt, cmd, col) in enumerate(btns):
