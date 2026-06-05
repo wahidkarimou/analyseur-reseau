@@ -1,4 +1,3 @@
-# utils/storage.py
 import json
 import os
 
